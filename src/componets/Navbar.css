@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  height: 50px;
+  gap: 45px;
+}
+
+nav a {
+  text-decoration: none;
+  color: brown;
+  font-weight: 600;
+  font-size: 32px;
+  transition: all .2s;
+}
+
+nav a:hover {
+  color: salmon;
+}
+
+nav a svg {
+  margin-right: 10px;
+
+}

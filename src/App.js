@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import CreatePost from './componets/CreatePost';
+import Home from './componets/Home';
+import Login from './componets/Login';
+import Logout from './componets/Logout';
+import Navbar from './componets/Navbar';
+
 import './App.css';
 
+
+
 function App() {
+  // check you are login or not..
+  const [isAuth, setisAuth] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/createpost" element={<CreatePost />}></Route>
+        <Route path="/login" element={<Login setIsAuth={setisAuth}/>}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
