@@ -3,7 +3,7 @@ import React from 'react';
 import { auth, provider } from '../firebase';
 import { useNavigate  } from 'react-router-dom';
 
-function Login({ setIsAuth }) {
+const  Login = ({ setIsAuth }) => {
   const navigate = useNavigate();
   const loginHandler = () => {
     // login with google
